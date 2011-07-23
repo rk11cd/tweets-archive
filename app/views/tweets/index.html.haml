@@ -1,4 +1,11 @@
-%h1 Tweets#index
-%p Find me in app/views/tweets/index.html.haml
-%p= @tweets.count
-%p= @tweets.first.text
+%p
+  = @tweets.count
+  tweets
+
+.pagination= paginate @tweets
+- @tweets.each do |tweet|
+  %div.tweet
+    %img{ :src => tweet.user["profile_image_url"], :width => 48, :height => 48 }
+    %a{ :href => "http://twitter.com/" + tweet.user["screen_name"] }= tweet.user["screen_name"]
+    %span= tweet.text
+.pagination= paginate @tweets

@@ -1,0 +1,16 @@
+!!! 5
+%html
+  %head
+    %title
+      = ["RubyKaigi2011 Tweets", @title].compact.join(" - ")
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "pusher.min", "application"
+    :javascript
+      var channels = [];
+    = csrf_meta_tags
+  %body
+    #header
+      %h1
+        = link_to "RubyKaigi2011 Tweets", root_path
+    #main
+      = yield

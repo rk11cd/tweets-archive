@@ -11,6 +11,8 @@ gem 'jquery-rails'
 
 gem 'mongoid'
 
+gem 'kaminari'
+
 group :development do
   gem 'sqlite3'
 end

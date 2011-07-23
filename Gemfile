@@ -10,6 +10,8 @@ gem 'uglifier'
 
 gem 'jquery-rails'
 
+gem 'mongoid'
+
 group :production do
   gem 'pg'
   gem 'therubyracer-heroku'

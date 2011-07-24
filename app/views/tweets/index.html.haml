@@ -12,4 +12,5 @@
     %img{ :src => tweet.user["profile_image_url"], :width => 48, :height => 48 }
     %a{ :href => "http://twitter.com/" + tweet.user["screen_name"] }= tweet.user["screen_name"]
     %span= tweet.text
+    %a.created_at{ :href => "http://twitter.com/" + tweet.user["screen_name"] + "/status/" + tweet.id_str }><= Time.parse(tweet.created_at).strftime("%m/%d %H:%M:%S")
 .pagination= paginate @tweets

@@ -1,5 +1,14 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.desc(:_id).page(params[:page]).per(50)
+    @q    = params[:q]
+    @page = params[:page]
+
+    if @q.present?
+      @tweets = Tweet.query(@q)
+    else
+      @tweets = Tweet.all
+    end
+
+    @tweets = @tweets.desc(:_id).page(@page).per(50)
   end
 end

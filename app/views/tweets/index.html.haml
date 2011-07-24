@@ -1,3 +1,7 @@
+= form_tag "/", :method => :get, :id => "search-form" do
+  = text_field_tag :q, @q, :size => 40, :id => "search-query"
+  = submit_tag "Search"
+
 %p
   = @tweets.count
   tweets
